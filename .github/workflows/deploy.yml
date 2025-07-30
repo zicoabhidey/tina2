@@ -30,7 +30,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
         
-      - name: Build with Tina
+      # CRITICAL: Build Tina first
+      - name: Build TinaCMS
+        run: npx @tinacms/cli build --local
+        env:
+          NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}
+          TINA_TOKEN: ${{ secrets.TINA_TOKEN }}
+          
+      - name: Build Next.js
         run: npm run build
         env:
           NEXT_PUBLIC_TINA_CLIENT_ID: ${{ secrets.TINA_CLIENT_ID }}

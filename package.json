@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tinacms dev -c \"next dev\"",
-    "build": "tinacms build && next build",
-    "start": "next start",
-    "export": "next export",
-    "tinacms": "tinacms"
+    "build": "tinacms build --local && next build",
+    "start": "next start"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +15,7 @@
     "@tinacms/cli": "^1.6.9",
     "@tinacms/datalayer": "^1.3.6",
     "tinacms": "^2.2.8",
-    "next": "^14.2.16",
+    "next": "^15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
